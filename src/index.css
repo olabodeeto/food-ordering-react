@@ -1,13 +1,33 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-title {
+  @apply text-gray-500 text-4xl border-l-8
+    border-red-500 p-2 mt-2 ml-2 mb-10;
+}
+.food-list {
+  @apply grid grid-cols-1 gap-5 lg:grid-cols-4 p-2 w-full m-auto mt-20;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.food-item {
+  @apply relative w-80 h-80 md:w-60 md:h-60
+      border border-red-300 overflow-hidden rounded-lg;
+}
+.item-name {
+  @apply absolute w-full px-1 bg-red-200 bottom-0 py-2;
+}
+.item-ribbon {
+  @apply bg-red-400 w-10 flex justify-center items-center
+    h-20 absolute -bottom-8 -right-2 transform rotate-45 cursor-pointer;
+}
+
+.item-ribbon-icon {
+  @apply text-xl text-gray-50 font-extrabold 
+    relative bottom-1 right-1 transform rotate-45;
+}
+
+.footer {
+  @apply bg-red-400 p-5 m-auto mt-20;
 }
